@@ -1,4 +1,4 @@
-package com.demo.chen_gui.listviewcache;
+package com.demo.chen_gui.activity;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,6 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.demo.utlis.ImageLoad;
 
 import java.util.HashSet;
 import java.util.List;

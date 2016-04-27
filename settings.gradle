@@ -1,1 +1,2 @@
-include ':app', ':catloadinglibrary', ':listviewcache'
+include ':app', "listviewcache", ':catloadinglibrary'
+project(':catloadinglibrary').projectDir = new File('librarys/catloadinglibrary')

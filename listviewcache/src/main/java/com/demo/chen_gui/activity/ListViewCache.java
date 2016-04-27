@@ -1,4 +1,4 @@
-package com.demo.chen_gui.listviewcache;
+package com.demo.chen_gui.activity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,9 +19,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ListViewCache extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "ListViewCache";
     private ListView listView = null;
     private List<NewsBean> datas = null;
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_main);
+        setContentView (R.layout.listview_cache);
 
         init ();
         iniData ();
@@ -125,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
              *
              */
             if (datas.size () > 0) {
-                listView.setAdapter (new ListAdapter (MainActivity.this, datas,listView));
-                Toast.makeText (MainActivity.this, "json加载完成", Toast.LENGTH_LONG).show ();
+                listView.setAdapter (new ListAdapter (ListViewCache.this, datas,listView));
+                Toast.makeText (ListViewCache.this, "json加载完成", Toast.LENGTH_LONG).show ();
             }
         }
     }

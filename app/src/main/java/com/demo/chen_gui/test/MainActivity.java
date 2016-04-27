@@ -1,5 +1,6 @@
 package com.demo.chen_gui.test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -8,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.roger.catloadinglibrary.CatLoadingView;
+import com.demo.chen_gui.activity.ListViewCache;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,13 +18,14 @@ public class MainActivity extends AppCompatActivity {
     private ImageView img = null;
     private boolean flag = true;
     private int count = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.test);
-        init();
-        data();
-        listner();
+        init ();
+        data ();
+        listner ();
     }
 
     private void init() {
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                switch (event.getAction ()){
+                switch (event.getAction ()) {
                     case MotionEvent.ACTION_DOWN:
 
                         break;
@@ -61,33 +63,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void click(View view){
+    public void open_listViewCache(View view) {
 
-        final CatLoadingView catLoadingView = new CatLoadingView ();
+       Intent it = new Intent (MainActivity.this, ListViewCache.class);
 
-        catLoadingView.show (getSupportFragmentManager (),"");
+        startActivity (it);
 
-        Thread thread = new Thread (){
-            @Override
-            public void run() {
-
-                if (!siDismss()){
-                    catLoadingView.dismiss ();
-                }
-
-               }
-            };
-        thread.start ();
     }
 
-    private boolean siDismss() {
+    public void click(View view) {
 
-        for (int i = 0; i < count; i++) {
-            Log.i (TAG, "siDismss: "+i);
-        }
+        Log.i (TAG, "click: -----------------------------");
 
-        return  true;
     }
-
-
 }
